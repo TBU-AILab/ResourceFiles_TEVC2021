@@ -1,0 +1,129 @@
+#!/bin/bash
+#$ -N lc13
+#$ -cwd
+
+
+
+SEED=$1
+COUNTER=$2
+PROBLEMID=$3
+dimensions=$4
+testonlyicmaes=$5
+tunea=$6
+tuneb=$7
+tunec=$8
+tuned=$9
+tunee=${10}
+tunef=${11}
+tuneg=${12}
+learn_perbudget=${13}
+mtsls1per_ratedim=${14}
+mtsls1_initstep_rate=${15}
+mtsls1_iterbias_choice=${16}
+
+if [ $PROBLEMID == 1 ]; then
+	PROBLEM="f1"
+
+elif [ $PROBLEMID == 2 ]; then
+	PROBLEM="f2"
+
+elif [ $PROBLEMID == 3 ]; then
+	PROBLEM="f3"
+
+elif [ $PROBLEMID == 4 ]; then
+        PROBLEM="f4"				
+
+elif [ $PROBLEMID == 5 ]; then
+        PROBLEM="f5"
+
+elif [ $PROBLEMID == 6 ]; then
+        PROBLEM="f6"
+
+elif [ $PROBLEMID == 7 ]; then
+        PROBLEM="f7"
+
+elif [ $PROBLEMID == 8 ]; then
+        PROBLEM="f8"
+
+elif [ $PROBLEMID == 9 ]; then
+        PROBLEM="f9"
+
+elif [ $PROBLEMID == 10 ]; then
+	PROBLEM="f10"
+
+elif [ $PROBLEMID == 11 ]; then
+	PROBLEM="f11"
+
+elif [ $PROBLEMID == 12 ]; then
+	PROBLEM="f12"				
+
+elif [ $PROBLEMID == 13 ]; then
+	PROBLEM="f13"
+
+elif [ $PROBLEMID == 14 ]; then
+	PROBLEM="f14"
+
+elif [ $PROBLEMID == 15 ]; then
+	PROBLEM="f15"
+
+elif [ $PROBLEMID == 16 ]; then
+	PROBLEM="f16"
+
+elif [ $PROBLEMID == 17 ]; then
+	PROBLEM="f17"
+
+elif [ $PROBLEMID == 18 ]; then
+	PROBLEM="f18"
+
+elif [ $PROBLEMID == 19 ]; then
+	PROBLEM="f19"
+
+elif [ $PROBLEMID == 20 ]; then
+	PROBLEM="f20"
+
+elif [ $PROBLEMID == 21 ]; then
+	PROBLEM="f21"
+
+elif [ $PROBLEMID == 22 ]; then
+	PROBLEM="f22"
+
+elif [ $PROBLEMID == 23 ]; then
+	PROBLEM="f23"
+
+elif [ $PROBLEMID == 24 ]; then
+	PROBLEM="f24"
+
+elif [ $PROBLEMID == 25 ]; then
+	PROBLEM="f25"
+
+elif [ $PROBLEMID == 26 ]; then
+	PROBLEM="f26"
+
+elif [ $PROBLEMID == 27 ]; then
+	PROBLEM="f27"
+
+elif [ $PROBLEMID == 28 ]; then
+	PROBLEM="f28"
+
+fi
+
+
+if [ ! -d /tmp/icmaesils ]; then
+        mkdir /tmp/icmaesils/
+fi
+ 
+
+
+
+if [ ! -d /tmp/icmaesils/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions/ ];then 
+	mkdir /tmp/icmaesils/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions
+fi
+
+./icmaesils --testonlyicmaes $testonlyicmaes --ttunea $tunea --ttuneb $tuneb --ttunec $tunec --ttuned $tuned --ttunee $tunee --ttunef $tunef --ttuneg $tuneg  --learn_perbudget $learn_perbudget --mtsls1per_ratedim $mtsls1per_ratedim --mtsls1_initstep_rate $mtsls1_initstep_rate --mtsls1_iterbias_choice $mtsls1_iterbias_choice --problemID $PROBLEMID --dimensions $dimensions maxrange 100 --minrange -100 --seed $SEED > /tmp/icmaesils/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions/output$COUNTER.dat
+
+mv /tmp/icmaesils/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions/output$COUNTER.dat /home/tianjun/CEC2013/icmaesils/results/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions/
+         
+       
+
+
+

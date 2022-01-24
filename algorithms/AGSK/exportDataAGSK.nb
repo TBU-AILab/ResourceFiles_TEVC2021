@@ -1,0 +1,175 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6806,        167]
+NotebookOptionsPosition[      6325,        151]
+NotebookOutlinePosition[      6758,        168]
+CellTagsIndexPosition[      6715,        165]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dirOut", "=", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<..\\\\..\\\\data\\\\AGSK\\\\\>\""}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dirIn", "=", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<Results\\\\Adaptive_GSK_ALI_CEC2020_\>\""}]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{"Bound", "#0", "_Problem", "#7", "_problem", "_size", 
+    RowBox[{"#20", ".", "mat"}], "\"\<;\>"}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"dims", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToString", "@", "#"}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", "10", ",", "15", ",", "20"}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tests", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToString", "@", "#"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "10"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bounds", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToString", "@", "#"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"0", ",", "5"}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.835757823323227*^9, 3.8357580198073454`*^9}, {
+  3.835758800553439*^9, 3.835758825352602*^9}, {3.8358467684782505`*^9, 
+  3.8358467980853043`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"e130cbd6-950f-47ba-bd45-a929bb2d0bf6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dir", "=", 
+      RowBox[{"dirOut", "<>", "d"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "dir"}]}], ",", 
+       RowBox[{"CreateDirectory", "@", "dir"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Table", "[", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", "LOAD", " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"fileNameIn", "=", 
+            RowBox[{
+            "dirIn", "<>", "\"\<Bound#\>\"", "<>", "b", "<>", 
+             "\"\<_Problem#\>\"", "<>", "t", "<>", "\"\<_problem_size#\>\"", "<>",
+              "d", "<>", "\"\<.mat\>\""}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"x", "=", 
+            RowBox[{
+             RowBox[{"Import", "[", "fileNameIn", "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", "SAVE", " ", "*)"}], "\[IndentingNewLine]", 
+           RowBox[{"fileNameOut", "=", 
+            RowBox[{
+            "dir", "<>", "\"\<\\\\info_\>\"", "<>", "d", "<>", "\"\<_\>\"", "<>",
+              "t", "<>", "\"\<_\>\"", "<>", "b", "<>", "\"\<.txt\>\""}]}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"stringOut", "=", 
+            RowBox[{
+            "\"\<name=\\\"AGSK CEC20\\\";\\ndim=\>\"", "<>", "d", "<>", 
+             "\"\<;\\nbound=\>\"", "<>", "b", "<>", "\"\<;\\ntestID=\>\"", "<>",
+              "t", "<>", "\"\<;\\n(*--------*)\\nmin=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{
+               RowBox[{"Min", "@", "x"}], ",", "InputForm"}], "]"}], "<>", 
+             "\"\<;\\nmax=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{
+               RowBox[{"Max", "@", "x"}], ",", "InputForm"}], "]"}], "<>", 
+             "\"\<;\\nmedian=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{
+               RowBox[{"Median", "@", "x"}], ",", "InputForm"}], "]"}], "<>", 
+             "\"\<;\\nmean=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{
+               RowBox[{"Mean", "@", "x"}], ",", "InputForm"}], "]"}], "<>", 
+             "\"\<;\\nstd=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{
+               RowBox[{"StandardDeviation", "@", "x"}], ",", "InputForm"}], 
+              "]"}], "<>", "\"\<;\\n(*--------*)\\ndata=\>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"x", ",", "InputForm"}], "]"}], "<>", "\"\<;\>\""}]}], 
+           ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{"Export", "[", 
+            RowBox[{"fileNameOut", ",", "stringOut"}], "]"}], ";"}], 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
+          RowBox[{"{", 
+           RowBox[{"b", ",", "bounds"}], "}"}]}], "]"}], ";"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "tests"}], "}"}]}], "]"}], ";"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"d", ",", "dims"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8357580381852922`*^9, 3.8357580926950264`*^9}, {
+  3.8357582042625933`*^9, 3.835758235398147*^9}, {3.8357583140450716`*^9, 
+  3.835758338133274*^9}, {3.835758383981507*^9, 3.835758386756642*^9}, {
+  3.8357584266045694`*^9, 3.835758708746133*^9}, {3.8357587490420227`*^9, 
+  3.8357587798334665`*^9}, {3.8357589012961645`*^9, 3.835758901352166*^9}, {
+  3.835846816852883*^9, 3.8358469055605664`*^9}, {3.835846939151504*^9, 
+  3.8358470002927303`*^9}, {3.8358470863536158`*^9, 3.835847097249028*^9}, {
+  3.835847148055319*^9, 3.8358472077647624`*^9}, {3.835847256530428*^9, 
+  3.835847267924147*^9}, {3.835847318391113*^9, 3.8358473202422976`*^9}, {
+  3.835847444394513*^9, 3.8358474457646875`*^9}, {3.835847582596676*^9, 
+  3.8358476010935435`*^9}, {3.8358476356178713`*^9, 3.8358476613929734`*^9}, {
+  3.8358479158775864`*^9, 3.835848117948002*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"4d615ebe-2c9d-4dd8-b24a-483b8b96405a"]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>2.1 Inherited,
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d876e448-4681-462d-9393-c67bfeb46d8f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1415, 39, 301, "Input",ExpressionUUID->"e130cbd6-950f-47ba-bd45-a929bb2d0bf6"],
+Cell[1976, 61, 4345, 88, 949, "Input",ExpressionUUID->"4d615ebe-2c9d-4dd8-b24a-483b8b96405a"]
+}
+]
+*)
+

@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# user name on majorana, for controlling the maximum jobs per user
+username=tianjun
+
+# Maximum number of jobs
+MAXJOBS=3000
+
+
+testfile=./parametersfile
+x=`wc -l $testfile |awk '{print $1}'`
+
+i=1
+while [ $i -le $x ]
+do
+    line=`head -$i  $testfile | tail -1`
+    problemID=`echo $line |grep -e '^[0-9]' | awk {'print $1'} | tail -1`
+    dimensions=`echo $line |grep -e '^[0-9]' | awk {'print $2'} | tail -1`
+    testonlyicmaes=`echo $line |grep -e '^[0-9]' | awk {'print $3'} | tail -1`
+    tunea=`echo $line |grep -e '^[0-9]' | awk {'print $4'} | tail -1`
+    tuneb=`echo $line |grep -e '^[0-9]' | awk {'print $5'} | tail -1`
+    tunec=`echo $line |grep -e '^[0-9]' | awk {'print $6'} | tail -1`
+    tuned=`echo $line |grep -e '^[0-9]' | awk {'print $7'} | tail -1`
+    tunee=`echo $line |grep -e '^[0-9]' | awk {'print $8'} | tail -1`
+    tunef=`echo $line |grep -e '^[0-9]' | awk {'print $9'} | tail -1`
+    tuneg=`echo $line |grep -e '^[0-9]' | awk {'print $10'} | tail -1`
+    learn_perbudget=`echo $line |grep -e '^[0-9]' | awk {'print $11'} | tail -1`
+    mtsls1per_ratedim=`echo $line |grep -e '^[0-9]' | awk {'print $12'} | tail -1`
+    mtsls1_initstep_rate=`echo $line |grep -e '^[0-9]' | awk {'print $13'} | tail -1`
+    mtsls1_iterbias_choice=`echo $line |grep -e '^[0-9]' | awk {'print $14'} | tail -1`
+
+
+#./icmaesils --testonlyicmaes 0 --ttunea 3 --ttuneb 2 --ttunec 0.5 --ttuned 2 --ttunee -12 --ttunef -20 --ttuneg -12 --fes 50000  --learn_perbudget 0.1 --mtsls1_iterbias_choice 0  --mtsls1_initstep_rate 0.5 --mtsls1per_ratedim 1.5 --maxrange 100 --minrange -100 --dimensions 10 --problemID 9 --seed 1
+
+	for problemID in $problemID; do 	#problemID 
+
+					        counter=0;
+
+									
+				                if [ $problemID == 1 ]; then
+							PROBLEM="f1"
+						elif [ $problemID == 2 ]; then
+							PROBLEM="f2"
+						elif [ $problemID == 3 ]; then
+							PROBLEM="f3"
+						elif [ $problemID == 4 ]; then
+							PROBLEM="f4"				
+						elif [ $problemID == 5 ]; then
+							PROBLEM="f5"
+						elif [ $problemID == 6 ]; then
+							PROBLEM="f6"
+						elif [ $problemID == 7 ]; then
+							PROBLEM="f7"
+						elif [ $problemID == 8 ]; then
+							PROBLEM="f8"
+						elif [ $problemID == 9 ]; then
+							PROBLEM="f9"
+						elif [ $problemID == 10 ]; then
+							PROBLEM="f10"
+						elif [ $problemID == 11 ]; then
+							PROBLEM="f11"
+						elif [ $problemID == 12 ]; then
+							PROBLEM="f12"				
+						elif [ $problemID == 13 ]; then
+							PROBLEM="f13"
+						elif [ $problemID == 14 ]; then
+							PROBLEM="f14"
+						elif [ $problemID == 15 ]; then
+							PROBLEM="f15"
+						elif [ $problemID == 16 ]; then
+							PROBLEM="f16"
+						elif [ $problemID == 17 ]; then
+							PROBLEM="f17"
+						elif [ $problemID == 18 ]; then
+							PROBLEM="f18"
+						elif [ $problemID == 19 ]; then
+							PROBLEM="f19"
+						elif [ $problemID == 20 ]; then
+							PROBLEM="f20"
+						elif [ $problemID == 21 ]; then
+							PROBLEM="f21"
+						elif [ $problemID == 22 ]; then
+							PROBLEM="f22"
+						elif [ $problemID == 23 ]; then
+							PROBLEM="f23"
+						elif [ $problemID == 24 ]; then
+							PROBLEM="f24"
+						elif [ $problemID == 25 ]; then
+							PROBLEM="f25"
+                                                elif [ $problemID == 26 ]; then
+							PROBLEM="f26"
+						elif [ $problemID == 27 ]; then
+							PROBLEM="f27"
+						elif [ $problemID == 28 ]; then
+							PROBLEM="f28"
+						fi
+
+		                                
+						mkdir -p results/icmaesils-$testonlyicmaes-$learn_perbudget-$mtsls1per_ratedim-$mtsls1_initstep_rate-$mtsls1_iterbias_choice-$tunea-$tuneb-$tunec-$tuned-$PROBLEM-$dimensions/
+
+						for seed in 17495 15393 16852 12980 8058 31399 20280 32505 71 2138 3077 23849 9458 16633 24771 1309 2872 29108 29241 14895 15472 25154 2642 24508 20054; do
+					
+						qsub ./runtest.sh $seed $counter $problemID $dimensions $run $tunea $tuneb $tunec $tuned $tunee $tunef $tuneg $runmtsls1 $mtsls1_icmaes $learn_online $reward_by_weight $learn_perbudget $mtsls1per_ratedim $intialsol_perbudget $mtsls1_initstep_rate $mtsls1_iterbias_choice
+
+						((counter = counter+1))
+                                                      while [ $(qstat -u $username | wc -l) -gt $MAXJOBS ]; do
+                                                            sleep 10;
+                                                      done
+
+						done
+
+					
+		
+	done
+   
+
+
+
+    i=`expr $i + 1`
+done
+
+

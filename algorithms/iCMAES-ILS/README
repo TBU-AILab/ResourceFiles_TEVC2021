@@ -1,0 +1,144 @@
+##################################################################################################
+iCMAESILS: a Simple Hybrid Algorithm on the CEC 2013 Benchmark Set for Real-parameter Optimization
+#################################################################################################
+
+      Version: 1.0 
+      Author:  Tianjun Liao and Thomas Stuetzle       
+
+      We use the Templatized C++ Command Line Parser Library (TCLAP) distributed under 
+      the MIT license. TCLAP is written by Michael E. Smoot
+      C version of CMA-ES is written by Nikolaus Hansen        
+     
+      
+This is the README file to the software package iCMAESILS. 
+iCMAESILS is a software package that is freely 
+available subject to the GNU General Public Licence, which is included in file gpl.txt.
+
+This software package is in connection with the paper:
+
+Tianjun Liao and Thomas Stuetzle, "Benchmark Results for a Simple Hybrid Algorithm on the CEC 2013 Benchmark Set for Real-parameter Optimization"
+Special Session & Competition on Real-Parameter Single Objective Optimization at 2013 IEEE Congress on Evolutionary Computation
+
+If you use iCMAESILS in your research, we would appreciate a citation in your publication(s). 
+
+=========
+CONTENTS
+=========
+
+The main file:
+main.cpp
+
+=====
+Code
+=====
+
+The software was developed in C/C++ under Linux.
+To compile it for the first time under Linux just type:
+
+autoreconf -fvi
+./configure
+make
+
+or (aclocal
+autoconf 
+automake 
+./configure 
+make)
+
+The executable 'icmaesils' will be produced. To compile the source code 
+again, just type: make
+
+======
+USAGE
+======
+
+Brief USAGE: 
+   ./icmaesils  --learn_perbudget <double> --mtsls1_iterbias_choice
+                <double> --mtsls1_initstep_rate <double>
+                --mtsls1per_ratedim <double> --ttuneg <double> --ttunef
+                <double> --ttunee <double> --ttuned <double> --ttunec
+                <double> --ttuneb <double> --ttunea <double> --maxrange
+                <long double> --minrange <long double> --dimensions
+                <unsigned int> --problemID <unsigned int> --seed <unsigned
+                long> [--] [--version] [-h]
+
+
+Where: 
+
+   --learn_perbudget <double>
+     (required)  learn_perbudget
+
+   --mtsls1_iterbias_choice <double>
+     (required)  mtsls1_iterbias_choice
+
+   --mtsls1_initstep_rate <double>
+     (required)  mtsls1_initstep_rate
+
+   --mtsls1per_ratedim <double>
+     (required)  mtsls1per_ratedim
+
+   --ttuneg <double>
+     (required)  ttuneg
+
+   --ttunef <double>
+     (required)  ttunef
+
+   --ttunee <double>
+     (required)  ttunee
+
+   --ttuned <double>
+     (required)  ttuned
+
+   --ttunec <double>
+     (required)  ttunec
+
+   --ttuneb <double>
+     (required)  ttuneb
+
+   --ttunea <double>
+     (required)  ttunea
+
+   --maxrange <long double>
+     (required)  Maximum value of the search range
+
+   --minrange <long double>
+     (required)  Minimum value of the search range
+
+   --dimensions <unsigned int>
+     (required)  Dimensionality
+
+   --problemID <unsigned int>
+     (required)  Problem ID
+
+   --seed <unsigned long>
+     (required)  RNG seed
+
+
+Command line exmaple:
+
+./icmaesils --ttunea 9.687 --ttuneb 1.614 --ttunec 0.6825 --ttuned 3.245 --ttunee -9.023 --ttunef -10.82 --ttuneg -16.26 --learn_perbudget 0.15 --mtsls1_iterbias_choice 0.01910  --mtsls1_initstep_rate 0.6703 --mtsls1per_ratedim 1 --maxrange 100 --minrange -100 --dimensions 30 --problemID 1 --seed 1
+
+
+=======
+OUTPUT
+=======
+
+iCMAESILS version 1.0 writes its output to the console. It reports the development
+of the best solution value over time in the following format:
+
+#function_evaluations	solution_value   
+
+The first column reports the number of function evaluations that have been 
+required for finding a solution of the value printed in the second column. 
+A line is printed only when a better solution than the current one is found.
+
+
+
+Thank you for your interest in this work. If you have any questions about the 
+code or bugs to report, please send an email to:
+
+Tianjun Liao
+tliao@ulb.ac.be
+
+
+

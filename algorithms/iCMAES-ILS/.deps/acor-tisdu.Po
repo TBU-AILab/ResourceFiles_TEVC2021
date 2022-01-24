@@ -1,0 +1,606 @@
+acor-tisdu.o: tisdu.cpp rng.h /usr/local/include/gsl/gsl_rng.h \
+ /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h \
+ /usr/local/include/gsl/gsl_types.h /usr/local/include/gsl/gsl_errno.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/local/include/gsl/gsl_inline.h \
+ /usr/local/include/gsl/gsl_permutation.h \
+ /usr/local/include/gsl/gsl_check_range.h problem.h configuration.h \
+ /usr/include/c++/4.4/vector /usr/include/c++/4.4/bits/stl_algobase.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.4/cstddef /usr/include/c++/4.4/bits/functexcept.h \
+ /usr/include/c++/4.4/exception_defines.h \
+ /usr/include/c++/4.4/bits/cpp_type_traits.h \
+ /usr/include/c++/4.4/ext/type_traits.h \
+ /usr/include/c++/4.4/ext/numeric_traits.h \
+ /usr/include/c++/4.4/bits/stl_pair.h /usr/include/c++/4.4/bits/move.h \
+ /usr/include/c++/4.4/bits/concept_check.h \
+ /usr/include/c++/4.4/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.4/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.4/bits/stl_iterator.h \
+ /usr/include/c++/4.4/debug/debug.h /usr/include/c++/4.4/bits/allocator.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.4/ext/new_allocator.h /usr/include/c++/4.4/new \
+ /usr/include/c++/4.4/exception /usr/include/c++/4.4/bits/stl_construct.h \
+ /usr/include/c++/4.4/bits/stl_uninitialized.h \
+ /usr/include/c++/4.4/bits/stl_vector.h \
+ /usr/include/c++/4.4/initializer_list \
+ /usr/include/c++/4.4/bits/stl_bvector.h \
+ /usr/include/c++/4.4/bits/vector.tcc /usr/include/c++/4.4/cmath \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h /usr/include/c++/4.4/bits/cmath.tcc \
+ /usr/local/include/gsl/gsl_matrix.h \
+ /usr/local/include/gsl/gsl_matrix_complex_long_double.h \
+ /usr/local/include/gsl/gsl_complex.h \
+ /usr/local/include/gsl/gsl_vector_complex_long_double.h \
+ /usr/local/include/gsl/gsl_vector_long_double.h \
+ /usr/local/include/gsl/gsl_block_long_double.h \
+ /usr/local/include/gsl/gsl_vector_complex.h \
+ /usr/local/include/gsl/gsl_block_complex_long_double.h \
+ /usr/local/include/gsl/gsl_matrix_complex_double.h \
+ /usr/local/include/gsl/gsl_vector_complex_double.h \
+ /usr/local/include/gsl/gsl_vector_double.h \
+ /usr/local/include/gsl/gsl_block_double.h \
+ /usr/local/include/gsl/gsl_block_complex_double.h \
+ /usr/local/include/gsl/gsl_matrix_complex_float.h \
+ /usr/local/include/gsl/gsl_vector_complex_float.h \
+ /usr/local/include/gsl/gsl_vector_float.h \
+ /usr/local/include/gsl/gsl_block_float.h \
+ /usr/local/include/gsl/gsl_block_complex_float.h \
+ /usr/local/include/gsl/gsl_matrix_long_double.h \
+ /usr/local/include/gsl/gsl_matrix_double.h \
+ /usr/local/include/gsl/gsl_matrix_float.h \
+ /usr/local/include/gsl/gsl_matrix_ulong.h \
+ /usr/local/include/gsl/gsl_vector_ulong.h \
+ /usr/local/include/gsl/gsl_block_ulong.h \
+ /usr/local/include/gsl/gsl_matrix_long.h \
+ /usr/local/include/gsl/gsl_vector_long.h \
+ /usr/local/include/gsl/gsl_block_long.h \
+ /usr/local/include/gsl/gsl_matrix_uint.h \
+ /usr/local/include/gsl/gsl_vector_uint.h \
+ /usr/local/include/gsl/gsl_block_uint.h \
+ /usr/local/include/gsl/gsl_matrix_int.h \
+ /usr/local/include/gsl/gsl_vector_int.h \
+ /usr/local/include/gsl/gsl_block_int.h \
+ /usr/local/include/gsl/gsl_matrix_ushort.h \
+ /usr/local/include/gsl/gsl_vector_ushort.h \
+ /usr/local/include/gsl/gsl_block_ushort.h \
+ /usr/local/include/gsl/gsl_matrix_short.h \
+ /usr/local/include/gsl/gsl_vector_short.h \
+ /usr/local/include/gsl/gsl_block_short.h \
+ /usr/local/include/gsl/gsl_matrix_uchar.h \
+ /usr/local/include/gsl/gsl_vector_uchar.h \
+ /usr/local/include/gsl/gsl_block_uchar.h \
+ /usr/local/include/gsl/gsl_matrix_char.h \
+ /usr/local/include/gsl/gsl_vector_char.h \
+ /usr/local/include/gsl/gsl_block_char.h tisdu.h \
+ /usr/include/c++/4.4/iostream /usr/include/c++/4.4/ostream \
+ /usr/include/c++/4.4/ios /usr/include/c++/4.4/iosfwd \
+ /usr/include/c++/4.4/bits/stringfwd.h \
+ /usr/include/c++/4.4/bits/postypes.h /usr/include/c++/4.4/cwchar \
+ /usr/include/bits/wchar.h /usr/include/bits/wchar2.h \
+ /usr/include/c++/4.4/bits/char_traits.h \
+ /usr/include/c++/4.4/bits/localefwd.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/4.4/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/4.4/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.4/bits/ios_base.h \
+ /usr/include/c++/4.4/ext/atomicity.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/gthr.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/signal.h /usr/include/bits/setjmp.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/atomic_word.h \
+ /usr/include/c++/4.4/bits/locale_classes.h /usr/include/c++/4.4/string \
+ /usr/include/c++/4.4/bits/ostream_insert.h \
+ /usr/include/c++/4.4/cxxabi-forced.h \
+ /usr/include/c++/4.4/bits/stl_function.h \
+ /usr/include/c++/4.4/backward/binders.h \
+ /usr/include/c++/4.4/bits/basic_string.h \
+ /usr/include/c++/4.4/bits/basic_string.tcc \
+ /usr/include/c++/4.4/bits/locale_classes.tcc \
+ /usr/include/c++/4.4/streambuf /usr/include/c++/4.4/bits/streambuf.tcc \
+ /usr/include/c++/4.4/bits/basic_ios.h \
+ /usr/include/c++/4.4/bits/locale_facets.h /usr/include/c++/4.4/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/4.4/bits/streambuf_iterator.h \
+ /usr/include/c++/4.4/i486-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/4.4/bits/locale_facets.tcc \
+ /usr/include/c++/4.4/bits/basic_ios.tcc \
+ /usr/include/c++/4.4/bits/ostream.tcc /usr/include/c++/4.4/istream \
+ /usr/include/c++/4.4/bits/istream.tcc /usr/include/c++/4.4/cstdlib \
+ /usr/local/include/gsl/gsl_math.h /usr/local/include/gsl/gsl_sys.h \
+ /usr/local/include/gsl/gsl_machine.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include-fixed/limits.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/float.h \
+ /usr/local/include/gsl/gsl_precision.h /usr/local/include/gsl/gsl_nan.h \
+ /usr/local/include/gsl/gsl_pow_int.h /usr/local/include/gsl/gsl_minmax.h \
+ /usr/local/include/gsl/gsl_blas.h /usr/local/include/gsl/gsl_vector.h \
+ /usr/local/include/gsl/gsl_blas_types.h \
+ /usr/local/include/gsl/gsl_cblas.h /usr/local/include/gsl/gsl_linalg.h \
+ /usr/local/include/gsl/gsl_mode.h /usr/local/include/gsl/gsl_randist.h \
+ /usr/include/c++/4.4/algorithm /usr/include/c++/4.4/bits/stl_algo.h \
+ /usr/include/c++/4.4/bits/algorithmfwd.h \
+ /usr/include/c++/4.4/bits/stl_heap.h \
+ /usr/include/c++/4.4/bits/stl_tempbuf.h \
+ /usr/local/include/gsl/gsl_spline.h /usr/local/include/gsl/gsl_interp.h \
+ /usr/local/include/gsl/gsl_integration.h
+
+rng.h:
+
+/usr/local/include/gsl/gsl_rng.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-32.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/local/include/gsl/gsl_types.h:
+
+/usr/local/include/gsl/gsl_errno.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/local/include/gsl/gsl_inline.h:
+
+/usr/local/include/gsl/gsl_permutation.h:
+
+/usr/local/include/gsl/gsl_check_range.h:
+
+problem.h:
+
+configuration.h:
+
+/usr/include/c++/4.4/vector:
+
+/usr/include/c++/4.4/bits/stl_algobase.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/c++config.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/os_defines.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/cpu_defines.h:
+
+/usr/include/c++/4.4/cstddef:
+
+/usr/include/c++/4.4/bits/functexcept.h:
+
+/usr/include/c++/4.4/exception_defines.h:
+
+/usr/include/c++/4.4/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.4/ext/type_traits.h:
+
+/usr/include/c++/4.4/ext/numeric_traits.h:
+
+/usr/include/c++/4.4/bits/stl_pair.h:
+
+/usr/include/c++/4.4/bits/move.h:
+
+/usr/include/c++/4.4/bits/concept_check.h:
+
+/usr/include/c++/4.4/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.4/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.4/bits/stl_iterator.h:
+
+/usr/include/c++/4.4/debug/debug.h:
+
+/usr/include/c++/4.4/bits/allocator.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/c++allocator.h:
+
+/usr/include/c++/4.4/ext/new_allocator.h:
+
+/usr/include/c++/4.4/new:
+
+/usr/include/c++/4.4/exception:
+
+/usr/include/c++/4.4/bits/stl_construct.h:
+
+/usr/include/c++/4.4/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.4/bits/stl_vector.h:
+
+/usr/include/c++/4.4/initializer_list:
+
+/usr/include/c++/4.4/bits/stl_bvector.h:
+
+/usr/include/c++/4.4/bits/vector.tcc:
+
+/usr/include/c++/4.4/cmath:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/c++/4.4/bits/cmath.tcc:
+
+/usr/local/include/gsl/gsl_matrix.h:
+
+/usr/local/include/gsl/gsl_matrix_complex_long_double.h:
+
+/usr/local/include/gsl/gsl_complex.h:
+
+/usr/local/include/gsl/gsl_vector_complex_long_double.h:
+
+/usr/local/include/gsl/gsl_vector_long_double.h:
+
+/usr/local/include/gsl/gsl_block_long_double.h:
+
+/usr/local/include/gsl/gsl_vector_complex.h:
+
+/usr/local/include/gsl/gsl_block_complex_long_double.h:
+
+/usr/local/include/gsl/gsl_matrix_complex_double.h:
+
+/usr/local/include/gsl/gsl_vector_complex_double.h:
+
+/usr/local/include/gsl/gsl_vector_double.h:
+
+/usr/local/include/gsl/gsl_block_double.h:
+
+/usr/local/include/gsl/gsl_block_complex_double.h:
+
+/usr/local/include/gsl/gsl_matrix_complex_float.h:
+
+/usr/local/include/gsl/gsl_vector_complex_float.h:
+
+/usr/local/include/gsl/gsl_vector_float.h:
+
+/usr/local/include/gsl/gsl_block_float.h:
+
+/usr/local/include/gsl/gsl_block_complex_float.h:
+
+/usr/local/include/gsl/gsl_matrix_long_double.h:
+
+/usr/local/include/gsl/gsl_matrix_double.h:
+
+/usr/local/include/gsl/gsl_matrix_float.h:
+
+/usr/local/include/gsl/gsl_matrix_ulong.h:
+
+/usr/local/include/gsl/gsl_vector_ulong.h:
+
+/usr/local/include/gsl/gsl_block_ulong.h:
+
+/usr/local/include/gsl/gsl_matrix_long.h:
+
+/usr/local/include/gsl/gsl_vector_long.h:
+
+/usr/local/include/gsl/gsl_block_long.h:
+
+/usr/local/include/gsl/gsl_matrix_uint.h:
+
+/usr/local/include/gsl/gsl_vector_uint.h:
+
+/usr/local/include/gsl/gsl_block_uint.h:
+
+/usr/local/include/gsl/gsl_matrix_int.h:
+
+/usr/local/include/gsl/gsl_vector_int.h:
+
+/usr/local/include/gsl/gsl_block_int.h:
+
+/usr/local/include/gsl/gsl_matrix_ushort.h:
+
+/usr/local/include/gsl/gsl_vector_ushort.h:
+
+/usr/local/include/gsl/gsl_block_ushort.h:
+
+/usr/local/include/gsl/gsl_matrix_short.h:
+
+/usr/local/include/gsl/gsl_vector_short.h:
+
+/usr/local/include/gsl/gsl_block_short.h:
+
+/usr/local/include/gsl/gsl_matrix_uchar.h:
+
+/usr/local/include/gsl/gsl_vector_uchar.h:
+
+/usr/local/include/gsl/gsl_block_uchar.h:
+
+/usr/local/include/gsl/gsl_matrix_char.h:
+
+/usr/local/include/gsl/gsl_vector_char.h:
+
+/usr/local/include/gsl/gsl_block_char.h:
+
+tisdu.h:
+
+/usr/include/c++/4.4/iostream:
+
+/usr/include/c++/4.4/ostream:
+
+/usr/include/c++/4.4/ios:
+
+/usr/include/c++/4.4/iosfwd:
+
+/usr/include/c++/4.4/bits/stringfwd.h:
+
+/usr/include/c++/4.4/bits/postypes.h:
+
+/usr/include/c++/4.4/cwchar:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/bits/wchar2.h:
+
+/usr/include/c++/4.4/bits/char_traits.h:
+
+/usr/include/c++/4.4/bits/localefwd.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/4.4/clocale:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/c++/4.4/cctype:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/4.4/bits/ios_base.h:
+
+/usr/include/c++/4.4/ext/atomicity.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/gthr.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/gthr-default.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/bits/unistd.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/atomic_word.h:
+
+/usr/include/c++/4.4/bits/locale_classes.h:
+
+/usr/include/c++/4.4/string:
+
+/usr/include/c++/4.4/bits/ostream_insert.h:
+
+/usr/include/c++/4.4/cxxabi-forced.h:
+
+/usr/include/c++/4.4/bits/stl_function.h:
+
+/usr/include/c++/4.4/backward/binders.h:
+
+/usr/include/c++/4.4/bits/basic_string.h:
+
+/usr/include/c++/4.4/bits/basic_string.tcc:
+
+/usr/include/c++/4.4/bits/locale_classes.tcc:
+
+/usr/include/c++/4.4/streambuf:
+
+/usr/include/c++/4.4/bits/streambuf.tcc:
+
+/usr/include/c++/4.4/bits/basic_ios.h:
+
+/usr/include/c++/4.4/bits/locale_facets.h:
+
+/usr/include/c++/4.4/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/ctype_base.h:
+
+/usr/include/c++/4.4/bits/streambuf_iterator.h:
+
+/usr/include/c++/4.4/i486-linux-gnu/bits/ctype_inline.h:
+
+/usr/include/c++/4.4/bits/locale_facets.tcc:
+
+/usr/include/c++/4.4/bits/basic_ios.tcc:
+
+/usr/include/c++/4.4/bits/ostream.tcc:
+
+/usr/include/c++/4.4/istream:
+
+/usr/include/c++/4.4/bits/istream.tcc:
+
+/usr/include/c++/4.4/cstdlib:
+
+/usr/local/include/gsl/gsl_math.h:
+
+/usr/local/include/gsl/gsl_sys.h:
+
+/usr/local/include/gsl/gsl_machine.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include-fixed/limits.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include/float.h:
+
+/usr/local/include/gsl/gsl_precision.h:
+
+/usr/local/include/gsl/gsl_nan.h:
+
+/usr/local/include/gsl/gsl_pow_int.h:
+
+/usr/local/include/gsl/gsl_minmax.h:
+
+/usr/local/include/gsl/gsl_blas.h:
+
+/usr/local/include/gsl/gsl_vector.h:
+
+/usr/local/include/gsl/gsl_blas_types.h:
+
+/usr/local/include/gsl/gsl_cblas.h:
+
+/usr/local/include/gsl/gsl_linalg.h:
+
+/usr/local/include/gsl/gsl_mode.h:
+
+/usr/local/include/gsl/gsl_randist.h:
+
+/usr/include/c++/4.4/algorithm:
+
+/usr/include/c++/4.4/bits/stl_algo.h:
+
+/usr/include/c++/4.4/bits/algorithmfwd.h:
+
+/usr/include/c++/4.4/bits/stl_heap.h:
+
+/usr/include/c++/4.4/bits/stl_tempbuf.h:
+
+/usr/local/include/gsl/gsl_spline.h:
+
+/usr/local/include/gsl/gsl_interp.h:
+
+/usr/local/include/gsl/gsl_integration.h:
